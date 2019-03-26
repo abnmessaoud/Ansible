@@ -1,0 +1,16 @@
+---
+- name: Installation serveur web
+  hosts: web
+  remote_user: root
+  vars:
+    user: aymen
+    domains:
+      - local.dev
+      - demo.fr
+
+  roles:
+    - user
+    - utils
+    - nginx
+
+...

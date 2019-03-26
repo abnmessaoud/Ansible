@@ -1,0 +1,9 @@
+---
+- name: Installation environnement
+  apt: name={{ item }}  state=latest
+  with_items:
+    - vim
+    - htop
+    - git
+    - zsh
+...

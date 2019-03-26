@@ -1,0 +1,19 @@
+---
+- name: Ajout Clef dotdeb
+  apt_key: url=https://www.dotdeb.org/dotdeb.gpg
+
+- name : AJout de PHP au depot
+  apt_repository: repo='{{ item }}'
+  with_items:
+    - deb http://packages.dotdeb.org wheezy all
+    - deb-src http://packages.dotdeb.org wheezy all
+
+- name: APT update
+  apt: update_cache=yes
+
+- name: Installation de PHP
+  apt: name= {{ item }}
+  with_items: php_packages
+
+
+
