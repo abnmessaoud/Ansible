@@ -13,9 +13,9 @@
   file: path=/etc/nginx/sites-enabled/default state=absent
   notify: nginx reload
 
-#- name: PHP
-#  become: yes
-#  include: php.yml
+- name: PHP
+  become: yes
+  include: php.yml
 
 - name: configuration des sites
   become: yes
